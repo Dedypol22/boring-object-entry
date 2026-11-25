@@ -81,7 +81,7 @@ def main() -> int:
         return 1
 
     path = output_path()
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="\n") as handle:
         handle.write(REVIEW + "\n")
 
